@@ -39,16 +39,16 @@ public class Calc {
         }
 
         if (position == -1) {
-            System.out.println("Incorrect operand.");
-            return;
+            throw new IllegalArgumentException("Incorrect operand. Try to enter: +, -, / or *.");
         }
 
         if (count > 1) {
-            System.out.println("To march operand.");
-            return;
+            throw new IllegalArgumentException("To march operand.");
         }
 
         String[] data = income.split(regexActions[position]);
+
+        
 
         if ((isRoman(data[0])) && (isRoman(data[1]))) {
             if (actions[position] == "-") {
