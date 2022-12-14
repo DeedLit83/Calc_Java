@@ -28,7 +28,7 @@ enum RomanNumeral {
 
 public class Calc {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NumberFormatException {
         String[] actions = {"+", "-", "/", "*"};
         String[] regexActions = {"\\+", "-", "/", "\\*"};
         String[] romanString = {"I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"};
@@ -51,7 +51,7 @@ public class Calc {
         }
 
         if (position == -1) {
-            throw new IllegalArgumentException("Incorrect operand. Try to use: +, -, / or *.");
+            throw new NumberFormatException("Incorrect operand. Try to use: +, -, / or *.");
         }
 
         if (count > 1) {
